@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zuri-frontend
+  namespace: zuri-market
+  labels:
+    app: zuri-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zuri-frontend
+  template:
+    metadata:
+      labels:
+        app: zuri-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: renefondufe/zuri-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

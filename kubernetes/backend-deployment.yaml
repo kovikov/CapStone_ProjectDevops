@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zuri-backend
+  namespace: zuri-market
+  labels:
+    app: zuri-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zuri-backend
+  template:
+    metadata:
+      labels:
+        app: zuri-backend
+    spec:
+      containers:
+        - name: backend
+          image: renefondufe/zuri-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+            - name: STORE_NAME
+              value: "Zuri Market"
+            - name: API_SECRET_KEY
+              value: "replace-with-your-secret-key"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 20
+            periodSeconds: 20

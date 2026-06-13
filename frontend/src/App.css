@@ -1,0 +1,21 @@
+main {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+}
