@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '20'
-          package-manager-cache: false
       - name: Install backend dependencies
         run: npm ci
       - name: Run backend tests
@@ -39,7 +38,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '20'
-          package-manager-cache: false
       - name: Install frontend dependencies
         run: npm ci
       - name: Run frontend tests
