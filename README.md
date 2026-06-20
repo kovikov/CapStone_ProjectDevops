@@ -20,11 +20,21 @@ npm install
 npm run dev
 ```
 
+Run backend tests:
+```bash
+npm test
+```
+
 ### Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
+```
+
+Run frontend tests:
+```bash
+npm run test
 ```
 
 ### Full stack with Docker Compose

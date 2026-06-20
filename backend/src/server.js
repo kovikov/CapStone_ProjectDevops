@@ -1,6 +1,6 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
+import express from "express";
+import cors from "cors";
+import "dotenv/config";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -48,6 +48,10 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend running on port ${PORT}`);
-});
+if (process.argv[1] === new URL(import.meta.url).pathname) {
+  app.listen(PORT, () => {
+    console.log(`Backend running on port ${PORT}`);
+  });
+}
+
+export default app;

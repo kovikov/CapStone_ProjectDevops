@@ -17,6 +17,13 @@ This backend uses Node.js, Express, CORS, and dotenv.
    npm run dev
    ```
 
+## Tests
+
+Run the backend test suite:
+```bash
+npm test
+```
+
 ## Docker
 
 Build the image:
@@ -26,5 +33,5 @@ docker build -t zuri-market-backend .
 
 Run the container:
 ```bash
-docker run -p 4000:4000 --env-file .env zuri-market-backend
+docker run -p 5000:5000 --env-file .env zuri-market-backend
 ```

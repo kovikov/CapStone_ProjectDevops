@@ -13,10 +13,16 @@ npm install
 Run locally:
 
 ```bash
-npm start
+npm run dev
 ```
 
-> The frontend expects the backend to be available at `http://localhost:5000` during development.
+> The frontend expects the backend to be available at `http://localhost:5000` during development. Vite is configured to proxy `/api` requests to the backend.
+
+Run frontend tests:
+
+```bash
+npm run test
+```
 
 Build for production:
 
